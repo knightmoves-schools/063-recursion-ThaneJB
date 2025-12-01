@@ -4,9 +4,8 @@ function markAsDone(todos) {
 
 function transform(index, todos, modifiedTodos){
     if(index < todos.length){
-        transform[index] = `done - ${todos}`;
-        return transform(index, todos);
-        
+        modifiedTodos.push("done - " + todos[index].description);
+        return transform(index + 1, todos, modifiedTodos);
     }else{
         return modifiedTodos
     }
